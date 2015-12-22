@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221043734) do
+ActiveRecord::Schema.define(version: 20151222063301) do
+
+  create_table "coins", force: :cascade do |t|
+    t.integer  "value"
+    t.integer  "year"
+    t.string   "currency"
+    t.datetime "acquired"
+    t.text     "details"
+    t.binary   "front_face"
+    t.binary   "back_face"
+    t.integer  "collection_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "collections", force: :cascade do |t|
     t.string   "name"
